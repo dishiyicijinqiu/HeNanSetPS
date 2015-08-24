@@ -1,291 +1,49 @@
-﻿
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head id="ctl00_Head1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>
-        按地区查看配送关系
-    </title>
-    <link rel="stylesheet" type="text/css" href="../../lib/style/global.css" />
-
-    <script type="text/javascript" src="../../lib/scripts/My97DatePicker/WdatePicker.js"></script>
-    <script type="text/javascript" src="../../lib/scripts/Common.js"></script>
-    <script type="text/javascript" src="../../lib/scripts/global.js"></script>
-    <script type="text/javascript" src="../../lib/scripts/PCASClass.js"></script>
-    <script type="text/javascript" src="../../lib/scripts/jquery.js"></script>
-    <script type="text/javascript" src="../../lib/scripts/mainlistSelect.js"></script>
+﻿<tr class=\"alter\">
+    <td>
+        14
+    </td>
+    <td>南阳市</td>
+    <td>
+        <a href=\"javascript:void\(0\)\" title=\"查看经营企业详细信息\" onclick=\"window.open\('../../CommonPage/CompanyInfo.aspx\?companyid =HJ0070','selectCompany','width =550,height =350,resizable =0,scrollbars =0, status=0, toolbar=0, menubar=0'\)\">
+            南阳市普强医药有限公司
+        </a>
+    </td>
+    <td>
+        <span id=\"ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl15_Label1\">同意</span>
+    </td>
+    <td>
 
 
-
-
-    <script type="text/javascript" language="javascript">
-        function insertGoodsInfo(goodsInfo) {
-            var varGoodsInfo = goodsInfo.split('|');
-            document.all.ctl00_ContentPlaceHolder1_companyId.value = varGoodsInfo[0];
-            document.all.ctl00_ContentPlaceHolder1_txtCompany.value = varGoodsInfo[1];
-        }
-
-        function SelectCom() {
-            //选择配送企业不做地区限制
-            var comID = 'FD-D5-F1-FA-7C-38-BB-AD';
-            var comName = 'F9-0D-A3-E9-56-E0-7F-E2-1C-A8-E3-D4-F4-BB-76-15-DE-51-9D-E8-15-E7-1D-1B-FA-11-2E-FC-95-D1-50-5D-DE-46-49-FE-FA-ED-37-B7';
-            var companyID_TB = document.getElementById("ctl00_ContentPlaceHolder1_hdfCompanyID_SC").value;
-            var round = Math.random();
-            window.open('CompanySelect.aspx?companyID_TB='+companyID_TB+'&id=' + comID + '&name=' + comName + '&rand=' + round, 'SelectCompany', 'width=600,height=450,resizable=0,scrollbars=1, status=0, toolbar=0, menubar=0');
-        }
-    </script>
-
-</head>
-<body>
-    <form name="aspnetForm" method="post" action="ProductCompanySubArea.aspx?PID=50607&amp;returnUrl=%2fEnterprise%2fRelationQuery%2fRelationQueryUnpack.aspx%3freturnUrl%3d%2fEnterprise%2fRelationQuery%2fRelationDistributionQuery.aspx" id="aspnetForm">
-        <div>
-            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTYxNjMyNjUxNw8WAh4Sdl9wcm9jdXJlQ2F0YWxvZ0lkBQU1MDYwNxYCZg9kFgICAw9kFgICAQ9kFg4CAQ8PFgIeBFRleHQFHuiDuOiFsOakjuWJjei3r+aoquWQkei/nuaOpeWZqGRkAgMPDxYCHwEFBuW6t+WKm2RkAgUPDxYCHwEFMuaoqui/nuWZqOijhee9ru+8mjEwLTEwMG1t77yM5q+PMW1t5Li65LiA6KeE5qC844CCZGQCBw8PFgIfAQUn6IuP5bee5biC5bq35Yqb6aqo56eR5Zmo5qKw5pyJ6ZmQ5YWs5Y+4ZGQCCQ8QZGQWAWZkAhIPPCsADQEADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgRkFgJmD2QWCgIBD2QWCmYPZBYCZg8VAQExZAIBDw8WAh8BBQnlvIDlsIHluIJkZAICD2QWAmYPFQIGSEoxOTAyLeays+WNl+ecgeeZvuWQiOWMu+eWl+WZqOaisOmUgOWUruaciemZkOWFrOWPuGQCAw9kFgICAQ8PFgIfAQUJ5pyq5pON5L2cZGQCBA9kFgICAQ8PFgIeD0NvbW1hbmRBcmd1bWVudAUYNTA2MDcsSEoxOTAyLDQxMDIwMCxUcnVlZGQCAg9kFgpmD2QWAmYPFQEBMmQCAQ8PFgIfAQUJ5byA5bCB5biCZGQCAg9kFgJmDxUCBkhKMjA5NC3lvIDlsIHluILlronlrp7ljLvnlpflmajmorDplIDllK7mnInpmZDlhazlj7hkAgMPZBYCAgEPDxYCHwEFBuWQjOaEj2RkAgQPZBYCAgEPDxYCHwQFGDUwNjA3LEhKMjA5NCw0MTAyMDAsVHJ1ZWRkAgMPZBYKZg9kFgJmDxUBATNkAgEPDxYCHwEFCeW8gOWwgeW4gmRkAgIPZBYCZg8VAgZISjIzMjMk5p2e5Y6/6L6+5bq35Yy755aX5Zmo5qKw5pyJ6ZmQ5YWs5Y+4ZAIDD2QWAgIBDw8WAh8BBQblkIzmhI9kZAIED2QWAgIBDw8WAh8EBRg1MDYwNyxISjIzMjMsNDEwMjAwLFRydWVkZAIED2QWCmYPZBYCZg8VAQE0ZAIBDw8WAh8BBQnlvIDlsIHluIJkZAICD2QWAmYPFQIGSEoyMDY3JOmDkeW3nue+juWwmuWMu+eWl+WZqOaisOaciemZkOWFrOWPuGQCAw9kFgICAQ8PFgIfAQUG5ZCM5oSPZGQCBA9kFgICAQ8PFgIfBAUYNTA2MDcsSEoyMDY3LDQxMDIwMCxUcnVlZGQCBQ8PFgIeB1Zpc2libGVoZGQCEw8PFgQeCFBhZ2VTaXplAgUeC1JlY29yZGNvdW50AgRkZBgBBStjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGd2d1Byb2R1Y2VDYXRhbG9nDzwrAAoBCAIBZA==" />
-        </div>
-
-        <script type="text/javascript">
-            //<![CDATA[
-            var theForm = document.forms['aspnetForm'];
-            if (!theForm) {
-                theForm = document.aspnetForm;
-            }
-            function __doPostBack(eventTarget, eventArgument) {
-                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                    theForm.__EVENTTARGET.value = eventTarget;
-                    theForm.__EVENTARGUMENT.value = eventArgument;
-                    theForm.submit();
-                }
-            }
-            //]]>
-        </script>
-
-
-        <script language="Javascript">
-<!--
-function ANP_checkInput(bid,mv){var el=document.getElementById(bid);var r=new RegExp("^\\s*(\\d+)\\s*$");
-if(r.test(el.value)){if(RegExp.$1<1||RegExp.$1>mv){alert("页索引超出范围！");el.focus();el.select();return false;}
-return true;}alert("页索引不是有效的数值！");el.focus();el.select();return false;}
-function ANP_keydown(e,btnId){
-var kcode;
-if(window.event){kcode=e.keyCode;}
-else if(e.which){kcode=e.which;}
-var validKey=(kcode==8||kcode==46||kcode==37||kcode==39||(kcode>=48&&kcode<=57)||(kcode>=96&&kcode<=105));
-if(!validKey){
-if(kcode==13) document.getElementById(btnId).click();
-if(e.preventDefault) e.preventDefault();else{event.returnValue=false};
-}
-}
---></script>
-
-
-        <div class="maincon">
-            <div id="note">
-                按地区维护配送关系
-            </div>
-            <div id="note2">
-            </div>
-            <table>
-                <tr>
-                    <th align="right" width="20%">
-                        <span id="ctl00_ContentPlaceHolder1_lblProdctNameTag">产品名称：</span>
-                    </th>
-                    <td align="left">
-                        <span id="ctl00_ContentPlaceHolder1_lblProdctName">胸腰椎前路横向连接器</span>
-                    </td>
-                    <th align="right" width="20%">
-                        <span id="ctl00_ContentPlaceHolder1_lblGoodsNameTag">品牌：</span>
-                    </th>
-                    <td align="left">
-                        <span id="ctl00_ContentPlaceHolder1_lblGoodsName">康力</span>
-                    </td>
-                </tr>
-                <tr>
-                    <th align="right">
-                        <span id="ctl00_ContentPlaceHolder1_lblOutlookcTag">产品规格：</span>
-                    </th>
-                    <td align="left">
-                        <span id="ctl00_ContentPlaceHolder1_lblOutlookc">横连器装置：10-100mm，每1mm为一规格。</span>
-                    </td>
-                    <th align="right">
-                        <span id="ctl00_ContentPlaceHolder1_lblCompany_SCTag">生产企业：</span>
-                    </th>
-                    <td align="left">
-                        <span id="ctl00_ContentPlaceHolder1_lblCompany_SC">苏州市康力骨科器械有限公司</span><input type="hidden" name="ctl00$ContentPlaceHolder1$hdfCompanyID_SC" id="ctl00_ContentPlaceHolder1_hdfCompanyID_SC" value="FD-D5-F1-FA-7C-38-BB-AD" />
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br />
-        <div id="tabcontent2">
-            <table class="querylist">
-                <tr>
-                    <th align="right">
-                        选择要添加的配送区域：
-                    </th>
-                    <td align="left">
-                        <select name="ctl00$ContentPlaceHolder1$ddlProvice" id="ctl00_ContentPlaceHolder1_ddlProvice" disabled="disabled" class="hide">
-                            <option selected="selected" value="">所在省</option>
-
-                        </select>
-                        &nbsp;<select name="ctl00$ContentPlaceHolder1$ddlCity" id="ctl00_ContentPlaceHolder1_ddlCity">
-                            <option value="">所有地区</option>
-
-                        </select>
-                    </td>
-                    <td>
-                        <input name="ctl00$ContentPlaceHolder1$hfdCompanyName" type="hidden" id="ctl00_ContentPlaceHolder1_hfdCompanyName" />&nbsp;
-                    </td>
-                    <th align="right">
-                        配送企业：
-                    </th>
-                    <td align="left">
-                        <input name="ctl00$ContentPlaceHolder1$txtCompany" type="text" id="ctl00_ContentPlaceHolder1_txtCompany" />
-                        <input name="ctl00$ContentPlaceHolder1$companyId" type="hidden" id="ctl00_ContentPlaceHolder1_companyId" />
-                        <input name="ctl00$ContentPlaceHolder1$btnSelectCompany" type="button" id="ctl00_ContentPlaceHolder1_btnSelectCompany" style="width:100px" value="选择配送企业" onclick="javascript:SelectCom()" class="btn" />
-                    </td>
-                    <td align="left">
-                        <input type="submit" name="ctl00$ContentPlaceHolder1$HzButton1" value="添加配送关系" id="ctl00_ContentPlaceHolder1_HzButton1" class="btn" style="width:100px" />
-                    </td>
-                    <th align="right">
-                        企业确认状态：
-                    </th>
-                    <td align="left">
-                        <select name="ctl00$ContentPlaceHolder1$ddlState" id="ctl00_ContentPlaceHolder1_ddlState">
-                            <option selected="selected" value="all">全部</option>
-                            <option value="1">同意</option>
-                            <option value="2">拒绝</option>
-                            <option value="0">未操作</option>
-
-                        </select>
-                    </td>
-                    <td align="center">
-                        <input type="submit" name="ctl00$ContentPlaceHolder1$btnQuery" value="查询" id="ctl00_ContentPlaceHolder1_btnQuery" class="btn" />
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <table class="mainlist" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog" style="border-collapse:collapse;">
-                <tr>
-                    <th scope="col" style="width:30px;">序号</th>
-                    <th scope="col">配送地区</th>
-                    <th scope="col">配送企业</th>
-                    <th scope="col">确认状态</th>
-                    <th scope="col">操作</th>
-                </tr>
-                <tr class="row">
-                    <td>
-                        1
-                    </td>
-                    <td>开封市</td>
-                    <td>
-                        <a href="javascript:void(0)" title="查看经营企业详细信息" onclick="window.open('../../CommonPage/CompanyInfo.aspx?companyid=HJ1902','selectCompany','width=550,height=350,resizable=0,scrollbars=0, status=0, toolbar=0, menubar=0')">
-                            河南省百合医疗器械销售有限公司
-                        </a>
-                    </td>
-                    <td>
-                        <span id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl02_Label1">未操作</span>
-                    </td>
-                    <td>
-
-
-                        <a onclick="if(!this.disabled){return  confirm('确认要删除此行信息吗？');}else{return false;};" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl02_lbtnDel" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvwProduceCatalog$ctl02$lbtnDel','')">删除</a>
-                    </td>
-                </tr>
-                <tr class="alter">
-                    <td>
-                        2
-                    </td>
-                    <td>开封市</td>
-                    <td>
-                        <a href="javascript:void(0)" title="查看经营企业详细信息" onclick="window.open('../../CommonPage/CompanyInfo.aspx?companyid=HJ2094','selectCompany','width=550,height=350,resizable=0,scrollbars=0, status=0, toolbar=0, menubar=0')">
-                            开封市安实医疗器械销售有限公司
-                        </a>
-                    </td>
-                    <td>
-                        <span id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl03_Label1">同意</span>
-                    </td>
-                    <td>
-
-
-                        <a onclick="if(!this.disabled){return  confirm('确认要删除此行信息吗？');}else{return false;};" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl03_lbtnDel" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvwProduceCatalog$ctl03$lbtnDel','')">删除</a>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        3
-                    </td>
-                    <td>开封市</td>
-                    <td>
-                        <a href="javascript:void(0)" title="查看经营企业详细信息" onclick="window.open('../../CommonPage/CompanyInfo.aspx?companyid=HJ2323','selectCompany','width=550,height=350,resizable=0,scrollbars=0, status=0, toolbar=0, menubar=0')">
-                            杞县达康医疗器械有限公司
-                        </a>
-                    </td>
-                    <td>
-                        <span id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl04_Label1">同意</span>
-                    </td>
-                    <td>
-
-
-                        <a onclick="if(!this.disabled){return  confirm('确认要删除此行信息吗？');}else{return false;};" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl04_lbtnDel" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvwProduceCatalog$ctl04$lbtnDel','')">删除</a>
-                    </td>
-                </tr>
-                <tr class="alter">
-                    <td>
-                        4
-                    </td>
-                    <td>开封市</td>
-                    <td>
-                        <a href="javascript:void(0)" title="查看经营企业详细信息" onclick="window.open('../../CommonPage/CompanyInfo.aspx?companyid=HJ2067','selectCompany','width=550,height=350,resizable=0,scrollbars=0, status=0, toolbar=0, menubar=0')">
-                            郑州美尚医疗器械有限公司
-                        </a>
-                    </td>
-                    <td>
-                        <span id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl05_Label1">同意</span>
-                    </td>
-                    <td>
-
-
-                        <a onclick="if(!this.disabled){return  confirm('确认要删除此行信息吗？');}else{return false;};" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl05_lbtnDel" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvwProduceCatalog$ctl05$lbtnDel','')">删除</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="page">
-            <div id="ctl00_ContentPlaceHolder1_AspNetPager1" class="pageContent">
-                <div class="pageContent" style="width:40%;float:left;">
-                    第 <font color='red'><b>1</b></font>/1 页 每页 5 条 共 4 条
-                </div><div class="pageContent" style="width:60%;float:left;">
-                    <a disabled="disabled" style="margin-right:5px;">首页</a><a disabled="disabled" style="margin-right:5px;">上一页</a><span style="margin-right:5px;font-weight:Bold;color:red;">1</span><a disabled="disabled" style="margin-right:5px;">下一页</a><a disabled="disabled" style="margin-right:5px;">尾页</a>&nbsp;&nbsp;每页<select name="ctl00$ContentPlaceHolder1$AspNetPager1_pagesize" id="ctl00$ContentPlaceHolder1$AspNetPager1_pagesize" onchange="__doPostBack('ctl00$ContentPlaceHolder1$AspNetPager1','')">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>条
-                </div>
-            </div>
-
-
-        </div>
-        <div class="listip">
-            <ul>
-                <li>提示:<span>在添加配送关系之前，请选择配送区域及配送企业；更换配送区域或配送关系状态点击“查询”，可查询相关的配送企业情况。</span></li>
-            </ul>
-        </div>
-        <div class="listctrl">
-            <input type="button" value="关闭" onclick="window.close();" class="btn" />
-        </div>
-
-        <script type="text/javascript" language="javascript">
-            new PCAS("ctl00$ContentPlaceHolder1$ddlProvice", "ctl00$ContentPlaceHolder1$ddlCity" ,"410000","410200" );
-        </script>
+        <a onclick=\"if\(!this.disabled\)\{return confirm\('确认要删除此行信息吗？'\)\;\}else\{return=confirm\('确认要删除此行信息吗？'\)\;\}else\{return false\;\}\;\"=false\;\}\;\" id=\"ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl15_lbtnDel\" href=\"javascript:__doPostBack\('ctl00\$ContentPlaceHolder1\$gvwProduceCatalog\$ctl(?<value>.*?)\$lbtnDel',''\)\">删除</a>
+    </td>
+</tr>
 
 
 
-        <script type="text/javascript">alert('该地区已存在指定的配送企业！');</script>
-    </form>
-</body>
-</html>
+
+
+
+
+
+
+
+
+<tr class="alter">
+    <td>
+        14
+    </td>
+    <td>南阳市</td>
+    <td>
+        <a href="javascript:void(0)" title="查看经营企业详细信息" onclick="window.open('../../CommonPage/CompanyInfo.aspx?companyid=HJ0070','selectCompany','width=550,height=350,resizable=0,scrollbars=0, status=0, toolbar=0, menubar=0')">
+            南阳市普强医药有限公司
+        </a>
+    </td>
+    <td>
+        <span id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl15_Label1">同意</span>
+    </td>
+    <td>
+
+
+        <a onclick="if(!this.disabled){return  confirm('确认要删除此行信息吗？');}else{return false;};" id="ctl00_ContentPlaceHolder1_gvwProduceCatalog_ctl15_lbtnDel" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gvwProduceCatalog$ctl15$lbtnDel','')">删除</a>
+    </td>
+</tr>

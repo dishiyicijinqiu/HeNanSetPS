@@ -95,7 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HTMLPage1.html" />
-    <Content Include="JavaScript1.js" />
     <Content Include="PCASClass.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
